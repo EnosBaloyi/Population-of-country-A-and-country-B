@@ -1,0 +1,38 @@
+void main()
+{
+  // assign variables for populations of countryA and countryB as double
+var countryA = 128000000.00;
+var countryB = 323000000.00;
+
+// initialize i with 0, this is to count the year number
+var i = 0;
+
+// print the headings of the table
+print('Year\t\tCountryA\t\tCountryB');
+
+// run an infinite loop
+// and break when countryA's population exceeds that of countryB
+while(true) {
+
+// print the year number, countryA's population and countryB's population
+// by rounding off using round();
+print('${i}\t\t${countryA.round()}\t\t${countryB.round()}');
+if(countryA > countryB) {
+break;
+}
+
+// country A population increased by 1.01% every year
+// 1.01 in fraction of 1 is 0.0101
+countryA += (0.0101 * countryA);
+
+// countryB's population is decreased by 0.15% evert year
+// so subtract 0.0015 fromm countryB's population in every loop
+countryB -= (0.0015 * countryB);
+
+// increase i by 1 to increase year count
+i = i+1;
+}
+
+
+ 
+}
